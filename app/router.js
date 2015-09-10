@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('album', { path: "/" }, function() {
+    this.route('view', { path: "album/:album_id" });
+  });
 });
 
 export default Router;

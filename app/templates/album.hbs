@@ -1,0 +1,21 @@
+<div class='row'>
+  <div class='col-xs-4'>
+    {{#each model as |album|}}
+      {{#link-to 'album.view' album}}
+        <div class='media'>
+          <div class='media-left'>
+            <img src="{{album.albumCover}}" alt="{{album.title}}" class="album-icon img-rounded" />
+          </div>
+          <div class='media-body'>
+            <span class='rank'>#{{album.rank}}</span>
+            <h4 class='media-heading'>{{album.title}}</h4>
+            <p class='media-text'>{{album.artist}}</p>
+          </div>
+        </div>
+      {{/link-to}}
+    {{/each}}
+  </div>
+  <div class='col-xs-8'>
+    {{outlet}}
+  </div>
+</div>
